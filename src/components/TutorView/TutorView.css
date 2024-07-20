@@ -1,0 +1,52 @@
+.tutoriais-sublista {
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(18, 52, 77, 0.06);
+  border-radius: 10px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.sublista-titulo {
+  background-color: #112cf8;
+  color: #fff;
+  font-weight: 500;
+  padding: 15px 20px;
+  border-radius: 10px 10px 0 0;
+  text-align: start;
+  font-size: 1.3rem;
+}
+
+.sublista {
+  overflow-y: scroll;
+  height: calc(100% - 50.8px);
+  background-image: url(./background.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+}
+
+.sublista ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 25px;
+  border-bottom: 1px solid #dfe1e6;
+}
+
+.tutorial-link:hover {
+  color: #112cf8;
+  transition: 150ms all ease;
+}
+
+.copiar-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.icone-copiar {
+  width: 30px;
+}

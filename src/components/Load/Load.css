@@ -1,0 +1,34 @@
+.load {
+    position: absolute;
+    background: #fff;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: forwards dNone 2s;
+}
+
+.load-imagem {
+    width: 300px;
+    animation: goDownUp 2s forwards;
+}
+
+@keyframes goDownUp {
+    20% {
+        width: 200px;
+        opacity: 1;
+    }
+    100% {
+        width: 700px;
+        opacity: 0;
+    }
+}
+
+@keyframes dNone {
+    100% {
+        display: none;
+    }
+}

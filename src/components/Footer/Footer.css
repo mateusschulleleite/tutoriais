@@ -1,0 +1,14 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(18, 52, 77, .06);
+}
+
+
+.logo-magazord {
+  width: 200px;
+}
+
+

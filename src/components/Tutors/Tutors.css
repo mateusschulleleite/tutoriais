@@ -1,0 +1,8 @@
+.tutors {
+    display: flex;
+    height: calc(100vh - 71.81px);
+    padding: 30px;
+    gap: 30px;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}

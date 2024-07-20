@@ -1,0 +1,50 @@
+.tutoriais-lista {
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(18, 52, 77, 0.06);
+  border-radius: 10px;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 40%;
+}
+
+.container-tutorial {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tutoriais-titulo {
+  background-color: #e52c46;
+  color: #fff;
+  font-weight: 500;
+  padding: 15px 20px;
+  border-radius: 10px 10px 0 0;
+  text-align: start;
+  font-size: 1.3rem;
+}
+
+.lista-de-tutoriais {
+  max-height: calc(100% - 50.8px);
+  overflow-y: scroll;
+}
+
+.lista-titulo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 25px;
+  border-bottom: 1px solid #dfe1e6;
+  cursor: pointer;
+}
+
+.lista-titulo:hover {
+  color: #e52c46;
+  transition: 150ms all ease;
+}
+
+.seta {
+  width: 25px;
+  margin-top: 4px;
+  transform: rotate(270deg);
+}
