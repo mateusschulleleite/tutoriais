@@ -9,7 +9,6 @@ function App() {
       <Load />
       <Tutors />
       <Footer />
-      <div></div>
     </div>
   );
 }
