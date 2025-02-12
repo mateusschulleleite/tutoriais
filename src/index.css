@@ -103,6 +103,7 @@ section {
 body {
   line-height: 1;
   background-color: #ebeef3;
+  font-family: "Poppins", sans-serif;
 }
 ol,
 ul {

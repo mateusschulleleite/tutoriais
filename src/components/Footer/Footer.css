@@ -4,11 +4,18 @@
   padding: 15px 0;
   background: #fff;
   box-shadow: 0 2px 4px rgba(18, 52, 77, .06);
+  align-items: center;
+  gap: 20px;
 }
 
 
 .logo-magazord {
   width: 200px;
+}
+
+.footer p {
+  color: #E52C46;
+  font-weight: 500;
 }
 
 
