@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Tutors.css";
 import TutorsList from "../TutorsList";
 import TutorView from "../TutorView";
+import { buscarDados } from "../../firebase/dbService";
 
 let listaDeTutoriais = [
   {
@@ -323,7 +324,20 @@ let listaDeTutoriais = [
   },
 ];
 
+
+
 export default function Tutors() {
+
+  // Função normal para carregar os dados
+  const carregarTarefas = () => {
+    buscarDados().then((dadosBuscados) => {
+      console.log(dadosBuscados)
+    });
+  };
+
+  carregarTarefas()
+
+  
   const [itemLista, setItemLista] = useState(null);
   const [subtutoriais, setSubtutoriais] = useState([])
 
