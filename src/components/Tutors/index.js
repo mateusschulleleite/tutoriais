@@ -194,61 +194,68 @@ let listaDeTutoriais = [
       link: "https://www.youtube.com/watch?v=mNMIX4HgHbg&ab_channel=Suporte|Magazord",
     },
     decimoQuarto: {
-      nome: "Como Cadastrar Kits",
-      link: "https://www.youtube.com/watch?v=z23CScdRdys&ab_channel=Suporte|Magazord",
-    },
-    decimoQuinto: {
       nome: "Ativar/Desativar Produtos em Lote",
       link: "https://www.youtube.com/watch?v=cpHeTtGW08M&ab_channel=Suporte|Magazord",
     },
-    decimoSexto: {
+    decimoQuinto: {
       nome: "Colocar/Retirar Estoque",
       link: "https://www.youtube.com/watch?v=OSnmoQegLR0&ab_channel=Suporte|Magazord",
     },
-    decimoSetimo: {
+    decimoSexto: {
       nome: "Não Aparece a Característica Para Selecionar",
       link: "https://www.youtube.com/watch?v=3G7g3kC29Jc&ab_channel=Suporte|Magazord",
     },
-    decimoOitavo: {
+    decimoSetimo: {
       nome: "Tags de Produtos",
       link: "https://youtu.be/6KoJK5MQMGA",
     },
-    decimoNono: {
+    decimoOitavo: {
       nome: "Video do Youtube ou Arquivo nas Mídias do Produto",
       link: "https://youtu.be/Yr7-RMqmIOM",
     },
-    vigesimo: {
+    decimoNono: {
       nome: "Cadastro de Produto Completo (Tela Nova)",
       link: "https://youtu.be/BcZMgSh4XkA",
     },
-    vigesimoPrimeiro: {
+    vigesimo: {
       nome: "Replicar Produtos de Uma Loja Para Outra",
       link: "https://youtu.be/90o1R3WzJz4",
     },
-    vigesimoSegundo: {
+    vigesimoPrimeiro: {
       nome: "Como Alterar a Descrição do Produto",
       link: "https://drive.google.com/file/d/1HcGuh9iL2DGD6TMweYtWo1n0gimKpty5/view?usp=sharing",
     },
-    vigesimoTerceiro: {
+    vigesimoSegundo: {
       nome: "Cadastro de Produto Por Planilha",
       link: "https://drive.google.com/file/d/10VKRM2Hx0lADGrugJcMah6ALvHw_xry3/view?usp=sharing",
     },
-    vigesimoQuarto: {
+    vigesimoTerceiro: {
       nome: "Atualizar a Data de Lançamento em Lote",
       link: "https://drive.google.com/file/d/10yzosTJbP9QBMRQI5McK8uM7liXqpoyD/view?usp=sharing",
     },
-    vigesimoQuinto: {
+    vigesimoQuarto: {
       nome: "Alterar a Ordem das Derivações na Pagina do Produto",
       link: "https://drive.google.com/file/d/10oWzgriEK17P_snPg4Q8dOhAyzTf3C3l/view?usp=sharing",
     },
-    vigesimoSexto: {
+    vigesimoQuinto: {
       nome: "Cadastrar Novos Items na Lista de Derivação (Cores, Tamanhos)",
       link: "https://drive.google.com/file/d/10zIHZPXsI3IzYWTiJmuzJiRI2oiuGecu/view?usp=sharing",
     },
-    vigesimoSetimo: {
+    vigesimoSexto: {
       nome: "Importação de Características Por Planilha",
       link: "https://drive.google.com/file/d/11KMoZwWOaKm0no0bo1A97rHSf9drYAe9/view?usp=sharing",
     },
+  },
+  {
+    nome: "Kit",
+    primeiro: {
+      nome: "Como Cadastrar Kit (Tela antiga)",
+      link: "https://www.youtube.com/watch?v=z23CScdRdys&ab_channel=Suporte|Magazord",
+    },
+    segundo: {
+      nome: "Como Cadastrar Kit (Tela nova)",
+      link: "https://drive.google.com/file/d/1S9SqWZqfPs5DFkheL-WQCYnlI1tXvQV8/view?usp=sharing",
+    }
   },
   {
     nome: "Blog",
