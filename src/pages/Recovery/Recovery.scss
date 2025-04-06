@@ -1,0 +1,97 @@
+.recovery {
+    display: flex;
+    height: 100vh;
+    padding: 50px;
+    box-sizing: border-box;
+  
+    .recovery__bakground {
+      width: 60%;
+  
+      img {
+        height: 100%;
+      }
+    }
+  
+    .recovery__form {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: #112cf8;
+        text-align: center;
+        line-height: 1.2;
+      }
+  
+      p {
+        margin: 36px 0;
+        font-size: 30px;
+      }
+  
+      form {
+        width: 80%;
+  
+        fieldset {
+          margin-bottom: 40px;
+  
+          label {
+            font-size: 20px;
+            display: block;
+            margin-bottom: 10px;
+            color: #000000;
+          }
+  
+          input {
+            width: 100%;
+            font-size: 18px;
+            padding: 13px 10px;
+            border-radius: 5px;
+            border: 1px solid #e52c46;
+          }
+  
+          span {
+            display: block;
+            margin-top: 5px;
+            font-size: 20px;
+            color: #e52c46;
+          }
+        }
+  
+        button {
+          width: 100%;
+          font-size: 20px;
+          padding: 13px 10px;
+          border-radius: 5px;
+          border: none;
+          background-color: #e52c46;
+          color: #ffffff;
+          cursor: pointer;
+        }
+  
+        a {
+          display: block;
+          text-align: center;
+          margin-top: 20px;
+          font-size: 18px;
+          color: #e52c46;
+        }
+      }
+  
+      div {
+        position: absolute;
+        bottom: 0px;
+        font-size: 18px;
+  
+        a {
+          color: #e52c46;
+          margin-left: 5px;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+  
