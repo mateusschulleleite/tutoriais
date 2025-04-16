@@ -12,7 +12,7 @@ let listaDeTutoriais = [
     },
     segundo: {
       nome: "Como Tirar Relatorio/Planilha de Cadastro de Produto",
-      link: "https://drive.google.com/file/d/1NQUin17o8IBuByO9PV8j2wGjO3aUa2TS/view?usp=sharing",
+      link: "https://youtu.be/IfnWinrAYv4",
     },
   },
   {
@@ -63,11 +63,11 @@ let listaDeTutoriais = [
     },
     decimoSegundo: {
       nome: "Trocar o Modelo de Checkout",
-      link: "https://drive.google.com/file/d/1rweI3G9HZikzNqs4aVpnRFzVcnBFRzUP/view?usp=sharing",
+      link: "https://youtu.be/RqCWmbqOSfI",
     },
     decimoTerceiro: {
       nome: "Desativar o Newsletter Para um Cliente Específico",
-      link: "https://drive.google.com/file/d/1U9QPuscQJh29euG9GPM5X8GgHuK0OWIe/view?usp=sharing",
+      link: "https://youtu.be/yyv5Togpsts",
     },
   },
   {
@@ -78,7 +78,7 @@ let listaDeTutoriais = [
     },
     segundo: {
       nome: "Cadastrar Submenu",
-      link: "https://drive.google.com/file/d/10RBtmIwQJKxOx1H_mAw5CNOhGZ-e0awP/view?usp=sharing",
+      link: "https://youtu.be/rIfYT3B0EuI",
     },
   },
   {
@@ -113,11 +113,11 @@ let listaDeTutoriais = [
     },
     oitavo: {
       nome: "Cadastro de Banner Completo",
-      link: "https://drive.google.com/file/d/10RdmYDF6EtJIttmEFy8lBs-SMo0pFvzW/view?usp=sharing",
+      link: "https://youtu.be/AlJ0558115w",
     },
     nono: {
       nome: "Inserir Um Novo Banner no Grupo de Banner",
-      link: "https://drive.google.com/file/d/10UsznRBf9C9gOPD3hJa2KAHcHoVNDZJ0/view?usp=sharing",
+      link: "https://youtu.be/vi5Z4z2gx9g",
     },
   },
   {
@@ -136,18 +136,18 @@ let listaDeTutoriais = [
     },
     quarto: {
       nome: "Alterar a Quantidade de Produtos Exibidos na Vitrine da Página Inicial",
-      link: "https://drive.google.com/file/d/10GFfEVdGeup610vmy7DPxkvReBpPEQ2r/view?usp=sharing",
+      link: "https://youtu.be/1HcFmojvQMQ",
     },
   },
   {
     nome: "Produto",
     primeiro: {
       nome: "Cadastrar Uma Nova Derivação(Produto Filho) Em Produto Existente",
-      link: "https://drive.google.com/file/d/10LBB0j1zJJTKiIk9wE4fLaIvpJxgf_Ps/view?usp=sharing",
+      link: "https://youtu.be/oyMSHxDpdQA",
     },
     segundo: {
       nome: "Colocar Tag em Produtos Especificos",
-      link: "https://drive.google.com/file/d/10GomI1-g3Shvz8Xy7lxPtXYVOQ2GI18o/view?usp=sharing",
+      link: "https://youtu.be/7fUD0NAL4Ls",
     },
     terceiro: {
       nome: "Alterar o Preço do Produto Manualmente",
