@@ -223,27 +223,27 @@ let listaDeTutoriais = [
     },
     vigesimoPrimeiro: {
       nome: "Como Alterar a Descrição do Produto",
-      link: "https://drive.google.com/file/d/1HcGuh9iL2DGD6TMweYtWo1n0gimKpty5/view?usp=sharing",
+      link: "https://youtu.be/Vh4ohUigmh8",
     },
     vigesimoSegundo: {
       nome: "Cadastro de Produto Por Planilha",
-      link: "https://drive.google.com/file/d/10VKRM2Hx0lADGrugJcMah6ALvHw_xry3/view?usp=sharing",
+      link: "https://youtu.be/ru1aEqNXbaw",
     },
     vigesimoTerceiro: {
       nome: "Atualizar a Data de Lançamento em Lote",
-      link: "https://drive.google.com/file/d/10yzosTJbP9QBMRQI5McK8uM7liXqpoyD/view?usp=sharing",
+      link: "https://youtu.be/qefLQeoC_Ys",
     },
     vigesimoQuarto: {
       nome: "Alterar a Ordem das Derivações na Pagina do Produto",
-      link: "https://drive.google.com/file/d/10oWzgriEK17P_snPg4Q8dOhAyzTf3C3l/view?usp=sharing",
+      link: "https://youtu.be/uvssPsUjkds",
     },
     vigesimoQuinto: {
       nome: "Cadastrar Novos Items na Lista de Derivação (Cores, Tamanhos)",
-      link: "https://drive.google.com/file/d/10zIHZPXsI3IzYWTiJmuzJiRI2oiuGecu/view?usp=sharing",
+      link: "https://youtu.be/Xp9joBzcvQk",
     },
     vigesimoSexto: {
       nome: "Importação de Características Por Planilha",
-      link: "https://drive.google.com/file/d/11KMoZwWOaKm0no0bo1A97rHSf9drYAe9/view?usp=sharing",
+      link: "https://youtu.be/9ZnWNMuvgMU",
     },
   },
   {
@@ -254,7 +254,7 @@ let listaDeTutoriais = [
     },
     segundo: {
       nome: "Como Cadastrar Kit (Tela nova)",
-      link: "https://drive.google.com/file/d/1S9SqWZqfPs5DFkheL-WQCYnlI1tXvQV8/view?usp=sharing",
+      link: "https://youtu.be/hP-XePkAMVA",
     }
   },
   {
@@ -277,7 +277,7 @@ let listaDeTutoriais = [
     },
     quinto: {
       nome: "Alterar os Destaques do Blog",
-      link: "https://drive.google.com/file/d/19bwV3dwtNefzQ6G0s3heFa9kioTCL6Ph/view?usp=sharing",
+      link: "https://youtu.be/KD3uZ60Sv4A",
     },
   },
   {
@@ -296,7 +296,7 @@ let listaDeTutoriais = [
     },
     quarto: {
       nome: "Alterar a Ordem dos Componentes na Landing Page",
-      link: "https://drive.google.com/file/d/1TxdME7attV3QcgFKRfRtOkw_C8p-J60j/view?usp=sharing",
+      link: "https://youtu.be/UUKwcyqV7Lc",
     },
     quinto: {
       nome: "Alterar a Ordem dos Produtos na Página de Pesquisa",
