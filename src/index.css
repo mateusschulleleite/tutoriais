@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 html,
 body,
 div,
@@ -127,6 +130,7 @@ table {
 
 video, img, iframe {
   width: 100%;
+  height: auto;
 }
 
 ::-webkit-scrollbar {
