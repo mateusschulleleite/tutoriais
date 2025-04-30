@@ -2,23 +2,39 @@ import React from "react";
 import "./TutorsList.css";
 import seta from "./seta.png";
 
-export default function TutorsList(props) {
-  const handleItemClick = (index) => {
-    props.setItemLista(index);
-    props.setSubtutoriais(props.tutoriais[index]) 
-  };
-
+export default function TutorsList({setNewTutor, data, setModuleSelected}) {
+  const handleModuleClick = (module) => {
+    setModuleSelected(module)
+  }
+  const modules = data.map((m) => m.id)
   return (
     <div className="tutoriais-lista">
+      <button onClick={() => {setNewTutor(true)}} class="cssbuttons-io-button">
+        Cadastrar Novo Tutorial
+        <div class="icon">
+          <svg
+            height="24"
+            width="24"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path
+              d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+              fill="currentColor"
+            ></path>
+          </svg>
+        </div>
+      </button>
       <div className="tutoriais-titulo">
         <h1>Lista de Tutoriais</h1>
       </div>
       <ul className="lista-de-tutoriais">
-        {props.tutoriais.map((tutorial, index) => {
+        {modules.map((module, index) => {
           return (
-            <li onClick={() => handleItemClick(index)} index={index}>
+            <li onClick={() => handleModuleClick(module)} key={index}>
               <div className="lista-titulo">
-                <h2>{tutorial.nome}</h2>
+                <h2 style={{textTransform: 'capitalize'}}>{module}</h2>
                 <div className="seta">
                   <img src={seta} alt="Icone de seta" />
                 </div>

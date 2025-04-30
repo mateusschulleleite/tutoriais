@@ -133,6 +133,10 @@ video, img, iframe {
   height: auto;
 }
 
+iframe {
+  height: 100%;
+}
+
 ::-webkit-scrollbar {
   width: 6px;
 }

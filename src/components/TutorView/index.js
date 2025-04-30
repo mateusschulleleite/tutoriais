@@ -3,28 +3,45 @@ import "./TutorView.css";
 import IconeCopiar from "./icone-copiar.png";
 import IconeCopiado from "./icone-copiado.png";
 
-export default function TutorView(props) {
-  const [subtutorialRenderizado, setSubtutorialRenderizado] = useState([]);
+export default function TutorView({ moduleSelected, data }) {
+  const [items, setItems] = useState([]);
 
   useEffect(() => {
-    if (props.subtutoriais && typeof props.subtutoriais === "object") {
-      setSubtutorialRenderizado(Object.values(props.subtutoriais));
+    const module = data.find((m) => m.id === moduleSelected);
+    if (module && module.items) {
+      setItems(module.items);
+    } else {
+      setItems([]);
     }
-  }, [props.subtutoriais]);
+  }, [moduleSelected]);
 
   function handleClickLink(e) {
     const itemClicado = e.currentTarget;
 
     const linkDoItem = itemClicado.dataset.link;
-    navigator.clipboard.writeText(linkDoItem)
+    navigator.clipboard.writeText(linkDoItem);
 
-    itemClicado.querySelector('span').textContent = 'Link Copiado';
-    itemClicado.querySelector('img').setAttribute('src', IconeCopiado)
+    itemClicado.querySelector("span").textContent = "Link Copiado";
+    itemClicado.querySelector("img").setAttribute("src", IconeCopiado);
 
     setTimeout(() => {
-      itemClicado.querySelector('span').textContent = 'Copiar Link';
-      itemClicado.querySelector('img').setAttribute('src', IconeCopiar)
-    }, 3000)
+      itemClicado.querySelector("span").textContent = "Copiar Link";
+      itemClicado.querySelector("img").setAttribute("src", IconeCopiar);
+    }, 3000);
+  }
+
+  function changeLinkVideo(l) {
+    let link = l.replace('watch?v=', 'embed/');
+    link = link.replace('youtu.be', 'youtube.com.br/embed')
+    return link;
+  }
+
+  function handleClickItem(e) {
+    const videos = document.querySelectorAll('.tutorial-video');
+    videos.forEach(video => {
+      video.style.display = 'none';
+    })
+    e.currentTarget.parentNode.nextElementSibling.style.display = 'block';
   }
 
   return (
@@ -34,15 +51,32 @@ export default function TutorView(props) {
       </div>
       <div className="sublista">
         <ul>
-          {subtutorialRenderizado.map((elemento, index) => {
-            return index !== 0 && (
-              <li index={index}>
-                <a className="tutorial-link" target="_blank" href={elemento.link}>{elemento.nome}</a>
-                <div onClick={(e) => handleClickLink(e)} data-link={elemento.link} className="copiar-link">
-                  <div className="icone-copiar">
-                    <img src={IconeCopiar} alt="Icone de Copiar" />
+          {items.map((item, index) => {
+            return (
+              <li key={index}>
+                <div className="tutorial-topo">
+                  <a onClick={(e) => handleClickItem(e)} className="tutorial-link" target="_blank">
+                    {item.name}
+                  </a>
+                  <div
+                    onClick={(e) => handleClickLink(e)}
+                    data-link={item.link}
+                    className="copiar-link"
+                  >
+                    <div className="icone-copiar">
+                      <img src={IconeCopiar} alt="Icone de Copiar" />
+                    </div>
+                    <span>Copiar Link</span>
                   </div>
-                  <span>Copiar Link</span>
+                </div>
+                <div className='tutorial-video'>
+                  <iframe
+                    width="560"
+                    src={changeLinkVideo(item.link)}
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
                 </div>
               </li>
             );

@@ -27,12 +27,21 @@
   background-position-y: center;
 }
 
-.sublista ul li {
+.tutorial-link {
+  cursor: pointer;
+}
+.tutorial-topo {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 25px;
   border-bottom: 1px solid #dfe1e6;
+}
+
+.tutorial-video {
+  display: none;
+  height: 600px;
+  padding: 10px 25px;
 }
 
 .tutorial-link:hover {
