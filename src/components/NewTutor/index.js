@@ -18,7 +18,7 @@ const NewTutor = ({ setNewTutor, data }) => {
     }
     setLoading(true);
     const dados = await enviarDados(module, name, link);
-    setModule("relatorios");
+    setModule("banners");
     setName();
     setLink();
     if (dados) {
