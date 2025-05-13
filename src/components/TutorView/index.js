@@ -36,14 +36,6 @@ export default function TutorView({ moduleSelected, data }) {
     return link;
   }
 
-  function handleClickItem(e) {
-    const videos = document.querySelectorAll('.tutorial-video');
-    videos.forEach(video => {
-      video.style.display = 'none';
-    })
-    e.currentTarget.parentNode.nextElementSibling.style.display = 'block';
-  }
-
   return (
     <div className="tutoriais-sublista">
       <div className="sublista-titulo">
@@ -55,7 +47,7 @@ export default function TutorView({ moduleSelected, data }) {
             return (
               <li key={index}>
                 <div className="tutorial-topo">
-                  <a onClick={(e) => handleClickItem(e)} className="tutorial-link" target="_blank">
+                  <a href={item.link} className="tutorial-link" target="_blank">
                     {item.name}
                   </a>
                   <div
@@ -68,15 +60,6 @@ export default function TutorView({ moduleSelected, data }) {
                     </div>
                     <span>Copiar Link</span>
                   </div>
-                </div>
-                <div className='tutorial-video'>
-                  <iframe
-                    width="560"
-                    src={changeLinkVideo(item.link)}
-                    title="YouTube video player"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
                 </div>
               </li>
             );
