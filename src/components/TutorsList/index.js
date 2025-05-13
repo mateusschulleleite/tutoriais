@@ -27,7 +27,7 @@ export default function TutorsList({setNewTutor, data, setModuleSelected}) {
         </div>
       </button>
       <div className="tutoriais-titulo">
-        <h1>Lista de Tutoriais</h1>
+        <h1>Lista de Módulos</h1>
       </div>
       <ul className="lista-de-tutoriais">
         {modules.map((module, index) => {

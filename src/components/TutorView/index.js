@@ -39,7 +39,7 @@ export default function TutorView({ moduleSelected, data }) {
   return (
     <div className="tutoriais-sublista">
       <div className="sublista-titulo">
-        <h1>Links</h1>
+        <h1>Lista de Tutoriais</h1>
       </div>
       <div className="sublista">
         <ul>
