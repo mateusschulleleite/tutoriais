@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./TutorView.css";
 import IconeCopiar from "./icone-copiar.png";
 import IconeCopiado from "./icone-copiado.png";
+import iconeLupa from './icone-lupa.png';
 
 export default function TutorView({ moduleSelected, data }) {
   const [items, setItems] = useState([]);
@@ -40,6 +41,10 @@ export default function TutorView({ moduleSelected, data }) {
     <div className="tutoriais-sublista">
       <div className="sublista-titulo">
         <h1>Lista de Tutoriais</h1>
+        <div className='sublista-input'>
+          <input placeholder='Buscar pelo tutorial'></input>
+          <img src={iconeLupa} alt='Busca' />
+        </div>
       </div>
       <div className="sublista">
         <ul>

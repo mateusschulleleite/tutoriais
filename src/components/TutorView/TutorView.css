@@ -15,8 +15,38 @@
   border-radius: 10px 10px 0 0;
   text-align: start;
   font-size: 1.3rem;
+  position: relative;
 }
 
+.sublista-input {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 100%;
+  border: none;
+  padding: 8px 0;
+}
+
+.sublista-input input {
+  border: none;
+  height: 100%;
+  width: 300px;
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 0 10px;
+}
+
+.sublista-input img {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  display: block;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
 .sublista {
   overflow-y: scroll;
   height: calc(100% - 50.8px);
