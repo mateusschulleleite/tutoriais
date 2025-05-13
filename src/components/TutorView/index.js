@@ -31,8 +31,8 @@ export default function TutorView({ moduleSelected, data }) {
   }
 
   function changeLinkVideo(l) {
-    let link = l.replace('watch?v=', 'embed/');
-    link = link.replace('youtu.be', 'youtube.com.br/embed')
+    let link = l.replace("watch?v=", "embed/");
+    link = link.replace("youtu.be", "youtube.com.br/embed");
     return link;
   }
 
@@ -49,6 +49,19 @@ export default function TutorView({ moduleSelected, data }) {
                 <div className="tutorial-topo">
                   <a href={item.link} className="tutorial-link" target="_blank">
                     {item.name}
+                    {item.newDate &&
+                      (() => {
+                        const datePast = item.newDate.toDate();
+                        const today = new Date();
+                        const diffEmMs = today - datePast;
+                        const diffEmDias = diffEmMs / (1000 * 60 * 60 * 24);
+
+                        if (diffEmDias <= 30) {
+                          return <span>Novidade</span>;
+                        } else {
+                          return null;
+                        }
+                      })()}
                   </a>
                   <div
                     onClick={(e) => handleClickLink(e)}

@@ -6,11 +6,11 @@ export const buscarDados = async () => {
   return querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
 };
 
-export const enviarDados = async (module, name, link) => {
+export const enviarDados = async (module, name, link, newDate) => {
   const items = "items";
   try {
     await updateDoc(doc(db, "tutoriais", module), {
-      [items]: arrayUnion({ name, link }),
+      [items]: arrayUnion({ name, link, newDate }),
     });
     return(true)
   } catch (error) {

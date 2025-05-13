@@ -17,7 +17,8 @@ const NewTutor = ({ setNewTutor, data }) => {
       return;
     }
     setLoading(true);
-    const dados = await enviarDados(module, name, link);
+    const newDate = new Date();
+    const dados = await enviarDados(module, name, link, newDate);
     setModule("banners");
     setName();
     setLink();
