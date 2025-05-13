@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./TutorView.css";
 import IconeCopiar from "./icone-copiar.png";
 import IconeCopiado from "./icone-copiado.png";
-import iconeLupa from './icone-lupa.png';
+import iconeLupa from "./icone-lupa.png";
 
-export default function TutorView({ moduleSelected, data }) {
+export default function TutorView({ moduleSelected, setModuleSelected, data }) {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
@@ -31,19 +31,34 @@ export default function TutorView({ moduleSelected, data }) {
     }, 3000);
   }
 
-  function changeLinkVideo(l) {
-    let link = l.replace("watch?v=", "embed/");
-    link = link.replace("youtu.be", "youtube.com.br/embed");
-    return link;
-  }
+  const handleSearch = (value) => {
+    setModuleSelected('');
+    const dados = [];
+
+    if (value) {
+      data.forEach((d) => {
+        const encontrados = d.items.filter((i) =>
+          i.name.toLowerCase().includes(value.toLowerCase())
+        );
+        dados.push(...encontrados);
+      });
+
+      setItems(dados);
+    } else {
+      setItems([]);
+    }
+  };
 
   return (
     <div className="tutoriais-sublista">
       <div className="sublista-titulo">
         <h1>Lista de Tutoriais</h1>
-        <div className='sublista-input'>
-          <input placeholder='Buscar pelo tutorial'></input>
-          <img src={iconeLupa} alt='Busca' />
+        <div className="sublista-input">
+          <input
+            onChange={(e) => handleSearch(e.target.value)}
+            placeholder="Buscar tutoriais"
+          ></input>
+          <img src={iconeLupa} alt="Busca" />
         </div>
       </div>
       <div className="sublista">

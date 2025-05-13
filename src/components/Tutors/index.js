@@ -8,7 +8,7 @@ export default function Tutors({ setNewTutor, data }) {
   return (
     <section className="tutors">
       <TutorsList setModuleSelected={setModuleSelected} setNewTutor={setNewTutor} data={data} />
-      <TutorView moduleSelected={moduleSelected} data={data} />
+      <TutorView setModuleSelected={setModuleSelected} moduleSelected={moduleSelected} data={data} />
     </section>
   );
 }
