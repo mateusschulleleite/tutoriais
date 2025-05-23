@@ -87,6 +87,19 @@
   border-bottom: 1px solid #dfe1e6;
 }
 
+.tutorial-topo > div {
+  gap: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tutorial-topo > div .trash {
+  font-size: 23px;
+  color: #f00;
+  cursor: pointer;
+}
+
 .tutorial-video {
   display: none;
   height: 600px;

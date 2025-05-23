@@ -3,8 +3,15 @@ import "./TutorView.css";
 import IconeCopiar from "./icone-copiar.png";
 import IconeCopiado from "./icone-copiado.png";
 import iconeLupa from "./icone-lupa.png";
+import { FaRegTrashAlt } from "react-icons/fa";
+import { excluirItemDoArray } from "../../firebase/dbService";
 
-export default function TutorView({ moduleSelected, setModuleSelected, data }) {
+export default function TutorView({
+  moduleSelected,
+  setModuleSelected,
+  data,
+  userIsAdmin,
+}) {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
@@ -32,7 +39,7 @@ export default function TutorView({ moduleSelected, setModuleSelected, data }) {
   }
 
   const handleSearch = (value) => {
-    setModuleSelected('');
+    setModuleSelected("");
     const dados = [];
 
     if (value) {
@@ -47,6 +54,10 @@ export default function TutorView({ moduleSelected, setModuleSelected, data }) {
     } else {
       setItems([]);
     }
+  };
+
+  const handleTrash = (value) => {
+    excluirItemDoArray(moduleSelected, value);
   };
 
   return (
@@ -83,15 +94,22 @@ export default function TutorView({ moduleSelected, setModuleSelected, data }) {
                         }
                       })()}
                   </a>
-                  <div
-                    onClick={(e) => handleClickLink(e)}
-                    data-link={item.link}
-                    className="copiar-link"
-                  >
-                    <div className="icone-copiar">
-                      <img src={IconeCopiar} alt="Icone de Copiar" />
+                  <div>
+                    <div
+                      onClick={(e) => handleClickLink(e)}
+                      data-link={item.link}
+                      className="copiar-link"
+                    >
+                      <div className="icone-copiar">
+                        <img src={IconeCopiar} alt="Icone de Copiar" />
+                      </div>
+                      <span>Copiar Link</span>
                     </div>
-                    <span>Copiar Link</span>
+                    {userIsAdmin === "admin" && (
+                      <div className="trash" onClick={() => handleTrash(item)}>
+                        <FaRegTrashAlt />
+                      </div>
+                    )}
                   </div>
                 </div>
               </li>

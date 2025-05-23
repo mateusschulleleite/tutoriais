@@ -3,7 +3,7 @@ import { enviarDados } from "../../firebase/dbService";
 import { useState } from "react";
 
 const NewTutor = ({ setNewTutor, data }) => {
-  const [module, setModule] = useState("relatorios");
+  const [module, setModule] = useState("banners");
   const [name, setName] = useState();
   const [link, setLink] = useState();
   const [loading, setLoading] = useState(false);
