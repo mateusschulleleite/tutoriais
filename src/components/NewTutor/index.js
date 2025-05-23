@@ -24,6 +24,7 @@ const NewTutor = ({ setNewTutor, data }) => {
     setLink();
     if (dados) {
       setLoading(false);
+      window.location.reload();
     }
   };
 
