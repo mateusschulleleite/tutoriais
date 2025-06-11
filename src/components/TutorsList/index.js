@@ -1,15 +1,20 @@
 import React from "react";
 import "./TutorsList.css";
-import seta from "./seta.png";
+import { MdOutlineArrowForwardIos } from "react-icons/md";
 
-export default function TutorsList({setNewTutor, data, setModuleSelected}) {
+export default function TutorsList({ setNewTutor, data, setModuleSelected }) {
   const handleModuleClick = (module) => {
-    setModuleSelected(module)
-  }
-  const modules = data.map((m) => m.id)
+    setModuleSelected(module);
+  };
+  const modules = data.map((m) => m.id);
   return (
     <div className="tutoriais-lista">
-      <button onClick={() => {setNewTutor(true)}} class="cssbuttons-io-button">
+      <button
+        onClick={() => {
+          setNewTutor(true);
+        }}
+        class="cssbuttons-io-button"
+      >
         Cadastrar Novo Tutorial
         <div class="icon">
           <svg
@@ -34,9 +39,9 @@ export default function TutorsList({setNewTutor, data, setModuleSelected}) {
           return (
             <li onClick={() => handleModuleClick(module)} key={index}>
               <div className="lista-titulo">
-                <h2 style={{textTransform: 'capitalize'}}>{module}</h2>
+                <h2 style={{ textTransform: "capitalize" }}>{module}</h2>
                 <div className="seta">
-                  <img src={seta} alt="Icone de seta" />
+                  <MdOutlineArrowForwardIos />
                 </div>
               </div>
             </li>

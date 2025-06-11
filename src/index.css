@@ -30,6 +30,7 @@ footer, header, hgroup, menu, nav, section {
   --bg-color-primary: #ebeef3;
   --bg-color-secondary: #ffffff;
   --bg-color-terciary:rgb(210, 210, 210);
+  --bg-color-fourth:rgb(101, 101, 101);
   --text-color-primary: #ffffff;
   --text-color-secondary: #000000;
   --border-color-primary: #f0f0f0;

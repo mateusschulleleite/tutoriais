@@ -100,6 +100,7 @@
 
 .seta {
   width: 25px;
+  font-size: 25px;
   margin-top: 4px;
-  transform: rotate(270deg);
+  color: var(--bg-color-fourth);
 }
