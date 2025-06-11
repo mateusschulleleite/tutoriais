@@ -5,6 +5,7 @@ import IconeCopiado from "./icone-copiado.png";
 import iconeLupa from "./icone-lupa.png";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { excluirItemDoArray } from "../../firebase/dbService";
+import Theme from "../Theme/Theme";
 
 export default function TutorView({
   moduleSelected,
@@ -71,6 +72,7 @@ export default function TutorView({
           ></input>
           <img src={iconeLupa} alt="Busca" />
         </div>
+        <Theme />
       </div>
       <div className="sublista">
         <ul>

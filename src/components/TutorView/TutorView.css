@@ -1,6 +1,6 @@
 .tutoriais-sublista {
   width: 100%;
-  background: #fff;
+  background: var(--bg-color-secondary);
   box-shadow: 0 2px 4px rgba(18, 52, 77, 0.06);
   border-radius: 10px;
   height: 100%;
@@ -9,18 +9,21 @@
 
 .sublista-titulo {
   background-color: #112cf8;
-  color: #fff;
+  color: var(--text-color-primary);
   font-weight: 500;
   padding: 15px 20px;
   border-radius: 10px 10px 0 0;
   text-align: start;
   font-size: 1.3rem;
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .sublista-input {
   position: absolute;
-  right: 20px;
+  right: 80px;
   top: 50%;
   transform: translateY(-50%);
   height: 100%;
@@ -32,14 +35,17 @@
   border: none;
   height: 100%;
   width: 300px;
-  border-radius: 5px;
+  border-radius: 15px;
   font-size: 16px;
   padding: 0 10px;
   font-family: Poppins, sans-serif;
+  background: var(--bg-color-primary);
+  color: var(--text-color-secondary)
 }
 
 .sublista-input input::placeholder {
   font-size: 14px;
+  color: var(--text-color-secondary);
 }
 
 .sublista-input input:focus {
@@ -68,11 +74,12 @@
 
 .tutorial-link {
   cursor: pointer;
+  color: var(--text-color-secondary);
 }
 
 .tutorial-link span {
   background: #112cf8;
-  color: #fff;
+  color: var(--text-color-primary);
   font-size: 14px;
   padding: 2px 5px;
   border-radius: 5px;
@@ -84,7 +91,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px 25px;
-  border-bottom: 1px solid #dfe1e6;
+  border-bottom: 1px solid var(--border-color-primary);
 }
 
 .tutorial-topo > div {
@@ -92,18 +99,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: var(--text-color-secondary)
 }
 
 .tutorial-topo > div .trash {
   font-size: 23px;
   color: #f00;
   cursor: pointer;
-}
-
-.tutorial-video {
-  display: none;
-  height: 600px;
-  padding: 10px 25px;
 }
 
 .tutorial-link:hover {

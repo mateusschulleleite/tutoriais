@@ -14,10 +14,10 @@
 }
 
 .cssbuttons-io-button {
+  color: var(--text-color-primary);
   font-family: "Poppins", sans-serif;
   margin-bottom: 10px;
   background: #FBB91A;
-  color: white;
   font-size: 1.3rem;
   line-height: 20px;
   border-radius: 10px;
@@ -69,7 +69,7 @@
 
 .tutoriais-titulo {
   background-color: #e52c46;
-  color: #fff;
+  color: var(--text-color-primary);
   font-weight: 500;
   padding: 15px 20px;
   border-radius: 10px 10px 0 0;
@@ -80,7 +80,7 @@
 .lista-de-tutoriais {
   height: 100%;
   overflow-y: scroll;
-  background-color: #fff;
+  background-color: var(--bg-color-secondary);
 }
 
 .lista-titulo {
@@ -88,8 +88,9 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px 25px;
-  border-bottom: 1px solid #dfe1e6;
+  border-bottom: 1px solid var(--border-color-primary);
   cursor: pointer;
+  color: var(--text-color-secondary);
 }
 
 .lista-titulo:hover {
