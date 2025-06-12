@@ -29,19 +29,20 @@
     p {
       margin: 36px 0;
       font-size: 30px;
+      color: var(--text-color-secondary);
     }
 
     form {
       width: 80%;
 
       fieldset {
-        margin-bottom: 40px;
+        margin-bottom: 20px;
 
         label {
           font-size: 20px;
           display: block;
           margin-bottom: 10px;
-          color: #000000;
+          color: var(--text-color-secondary);
         }
 
         input {

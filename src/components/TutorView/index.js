@@ -9,11 +9,11 @@ import Theme from "../Theme/Theme";
 
 export default function TutorView({
   moduleSelected,
-  setModuleSelected,
   data,
   userIsAdmin,
+  items,
+  setItems
 }) {
-  const [items, setItems] = useState([]);
 
   useEffect(() => {
     const module = data.find((m) => m.id === moduleSelected);
@@ -39,23 +39,7 @@ export default function TutorView({
     }, 3000);
   }
 
-  const handleSearch = (value) => {
-    setModuleSelected("");
-    const dados = [];
-
-    if (value) {
-      data.forEach((d) => {
-        const encontrados = d.items.filter((i) =>
-          i.name.toLowerCase().includes(value.toLowerCase())
-        );
-        dados.push(...encontrados);
-      });
-
-      setItems(dados);
-    } else {
-      setItems([]);
-    }
-  };
+  
 
   const handleTrash = (value) => {
     excluirItemDoArray(moduleSelected, value);
@@ -65,14 +49,6 @@ export default function TutorView({
     <div className="tutoriais-sublista">
       <div className="sublista-titulo">
         <h1>Lista de Tutoriais</h1>
-        <div className="sublista-input">
-          <input
-            onChange={(e) => handleSearch(e.target.value)}
-            placeholder="Buscar tutoriais"
-          ></input>
-          <img src={iconeLupa} alt="Busca" />
-        </div>
-        <Theme />
       </div>
       <div className="sublista">
         <ul>

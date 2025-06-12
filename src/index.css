@@ -31,15 +31,19 @@ footer, header, hgroup, menu, nav, section {
   --bg-color-secondary: #ffffff;
   --bg-color-terciary:rgb(210, 210, 210);
   --bg-color-fourth:rgb(101, 101, 101);
+
   --text-color-primary: #ffffff;
   --text-color-secondary: #000000;
   --border-color-primary: #f0f0f0;
+
+  --input-bg-primary: #ebeef3;
 }
 
 body {
   line-height: 1;
   background-color: var(--bg-color-primary);
   font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
 
 body.dark-mode {
@@ -49,6 +53,8 @@ body.dark-mode {
   --text-color-primary: #000000;
   --text-color-secondary: #ffffff;
   --border-color-primary: #3b3a3a;
+
+  --input-bg-primary:rgb(53, 53, 53);
 }
 
 ol, ul {

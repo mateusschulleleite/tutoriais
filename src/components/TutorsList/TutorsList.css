@@ -14,7 +14,7 @@
 }
 
 .cssbuttons-io-button {
-  color: var(--text-color-primary);
+  color: #fff;
   font-family: "Poppins", sans-serif;
   margin-bottom: 10px;
   background: #FBB91A;
@@ -69,7 +69,7 @@
 
 .tutoriais-titulo {
   background-color: #e52c46;
-  color: var(--text-color-primary);
+  color: #fff;
   font-weight: 500;
   padding: 15px 20px;
   border-radius: 10px 10px 0 0;

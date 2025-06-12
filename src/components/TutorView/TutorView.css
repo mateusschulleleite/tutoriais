@@ -9,7 +9,7 @@
 
 .sublista-titulo {
   background-color: #112cf8;
-  color: var(--text-color-primary);
+  color: #fff;
   font-weight: 500;
   padding: 15px 20px;
   border-radius: 10px 10px 0 0;
@@ -21,47 +21,6 @@
   align-items: center;
 }
 
-.sublista-input {
-  position: absolute;
-  right: 80px;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 100%;
-  border: none;
-  padding: 8px 0;
-}
-
-.sublista-input input {
-  border: none;
-  height: 100%;
-  width: 300px;
-  border-radius: 15px;
-  font-size: 16px;
-  padding: 0 10px;
-  font-family: Poppins, sans-serif;
-  background: var(--bg-color-primary);
-  color: var(--text-color-secondary)
-}
-
-.sublista-input input::placeholder {
-  font-size: 14px;
-  color: var(--text-color-secondary);
-}
-
-.sublista-input input:focus {
-  outline: none;
-}
-
-.sublista-input img {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  display: block;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  cursor: pointer;
-}
 .sublista {
   overflow-y: scroll;
   height: calc(100% - 50.8px);

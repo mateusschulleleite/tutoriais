@@ -11,6 +11,8 @@ import AdvicePopup from "../../components/AdvicePopup/AdvicePopup";
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const [adviceName, setAdviceName] = useState("");
   const [adviceEmail, setAdviceEmail] = useState("");
   const [advicePassword, setAdvicePassword] = useState("");
   const navigate = useNavigate();
@@ -26,23 +28,30 @@ const Register = () => {
 
   const handleClickRegister = async (e) => {
     e.preventDefault();
+    if (name === "") {
+      setAdviceName("Preencha o campo de nome");
+      setAdviceEmail("");
+      setAdvicePassword("");
+      return;
+    }
     if (email === "") {
       setAdviceEmail("Preencha o campo de email");
+      setAdviceName("");
       setAdvicePassword("");
       return;
     }
     if (password === "") {
       setAdvicePassword("Preencha o campo de senha");
       setAdviceEmail("");
+      setAdviceName("");
       return;
     }
     setAdviceEmail("");
     setAdvicePassword("");
 
     try {
-      await register(email, password);
+      const resonseRegister = await register(email, password, name);
       navigate("/login");
-      console.log("Registro realizado com sucesso!");
     } catch (err) {
       setAdvicePopupActive(true);
       setAdvicePopupText("Email já cadastrado ou inválido");
@@ -68,6 +77,17 @@ const Register = () => {
         <h1>Tutoriais de Produto/Front</h1>
         <p>Crie sua conta</p>
         <form>
+          <fieldset>
+            <Label label="Nome" />
+            <Input
+              required={true}
+              setValue={setName}
+              value={name}
+              type="text"
+              placeholder="Digite seu Nome"
+            />
+            <span>{adviceName}</span>
+          </fieldset>
           <fieldset>
             <Label label="Email" />
             <Input

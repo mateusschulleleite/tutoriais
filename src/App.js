@@ -9,21 +9,28 @@ import { useNavigate } from "react-router";
 import NewTutor from "./components/NewTutor";
 import { buscarDados } from "./firebase/dbService";
 import { buscarUsers } from "./firebase/dbService";
+import Header from "./components/Header";
 
 function App() {
   const navigate = useNavigate();
   const [newTutor, setNewTutor] = useState(false);
   const [userIsAdmin, setUserIsAdmin] = useState();
+  const [userActive, setUserActive] = useState();
+  const [items, setItems] = useState([]);
+  const [moduleSelected, setModuleSelected] = useState("");
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (!user) {
         navigate("/login");
       } else {
-
         const carregarUsers = async () => {
           await buscarUsers().then((dadosBuscados) => {
-            const userLogged = dadosBuscados.filter((dado) => dado.uid === user.uid);
+            const userLogged = dadosBuscados.filter(
+              (dado) => dado.uid === user.uid
+            );
+            setUserActive(userLogged[0]);
             setUserIsAdmin(userLogged[0] ? userLogged[0].type : false);
           });
         };
@@ -34,8 +41,6 @@ function App() {
 
     return () => unsubscribe();
   }, [navigate]);
-
-  const [data, setData] = useState([]);
 
   useEffect(() => {
     const carregarTarefas = async () => {
@@ -50,8 +55,21 @@ function App() {
   return (
     <div className="App">
       <Load />
+      <Header
+        data={data}
+        setItems={setItems}
+        userActive={userActive}
+      />
       {newTutor && <NewTutor setNewTutor={setNewTutor} data={data} />}
-      <Tutors setNewTutor={setNewTutor} data={data} userIsAdmin={userIsAdmin} />
+      <Tutors
+        moduleSelected={moduleSelected}
+        setModuleSelected={setModuleSelected}
+        items={items}
+        setItems={setItems}
+        setNewTutor={setNewTutor}
+        data={data}
+        userIsAdmin={userIsAdmin}
+      />
       <Footer />
     </div>
   );
