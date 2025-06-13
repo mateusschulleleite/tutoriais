@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Header.css";
 import { FaUserCircle } from "react-icons/fa";
 import { IoLogOutOutline } from "react-icons/io5";
@@ -9,7 +9,14 @@ import { MdAddToPhotos } from "react-icons/md";
 import { enviarDados } from "../../firebase/dbService";
 import Notification from "../Notification/Notification";
 
-export default function Header({ setItems, data, userActive, userIsAdmin }) {
+export default function Header({
+  setItems,
+  data,
+  userActive,
+  userIsAdmin,
+  userActivities,
+  setUserActivities,
+}) {
   const [module, setModule] = useState("banners");
   const [name, setName] = useState();
   const [link, setLink] = useState();
@@ -54,7 +61,13 @@ export default function Header({ setItems, data, userActive, userIsAdmin }) {
       return;
     }
     const newDate = new Date();
-    const dados = await enviarDados(module, name, link, newDate);
+    const dados = await enviarDados(
+      module,
+      name,
+      link,
+      newDate,
+      userActive.name
+    );
     setModule("banners");
     setName();
     setLink();
@@ -150,7 +163,11 @@ export default function Header({ setItems, data, userActive, userIsAdmin }) {
         )}
       </div>
       <div className="header__options">
-        <Notification />
+        <Notification
+          userActive={userActive}
+          userActivities={userActivities}
+          setUserActivities={setUserActivities}
+        />
         <div className="header__options--image">
           <FaUserCircle />
         </div>

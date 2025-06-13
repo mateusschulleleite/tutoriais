@@ -1,5 +1,13 @@
 import { db } from "./firebaseConfig";
-import { arrayRemove, arrayUnion, collection, doc, getDocs, updateDoc } from "firebase/firestore";
+import {
+  addDoc,
+  arrayRemove,
+  arrayUnion,
+  collection,
+  doc,
+  getDocs,
+  updateDoc,
+} from "firebase/firestore";
 
 export const buscarUsers = async () => {
   const querySnapshot = await getDocs(collection(db, "users"));
@@ -11,16 +19,32 @@ export const buscarDados = async () => {
   return querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
 };
 
-export const enviarDados = async (module, name, link, newDate) => {
+export const buscarAtividades = async () => {
+  const querySnapshot = await getDocs(collection(db, "activities"));
+  return querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+};
+
+export const enviarDados = async (module, name, link, newDate, user) => {
   const items = "items";
   try {
     await updateDoc(doc(db, "tutoriais", module), {
       [items]: arrayUnion({ name, link, newDate }),
     });
-    return(true)
+
+    try {
+      await addDoc(collection(db, "activities"), {
+        name: name,
+        date: newDate,
+        readBy: [],
+        user: user,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+    return true;
   } catch (error) {
     alert("Erro ao enviar dados.");
-    return(true)
+    return true;
   }
 };
 
@@ -29,11 +53,11 @@ export const excluirItemDoArray = async (moduleSelected, itemParaRemover) => {
     const docRef = doc(db, "tutoriais", moduleSelected);
 
     await updateDoc(docRef, {
-      items: arrayRemove(itemParaRemover)
+      items: arrayRemove(itemParaRemover),
     });
 
     window.location.reload();
   } catch (error) {
     alert("Erro ao remover item");
   }
-}
+};

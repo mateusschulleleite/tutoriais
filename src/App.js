@@ -6,7 +6,7 @@ import Tutors from "./components/Tutors";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase/auth";
 import { useNavigate } from "react-router";
-import { buscarDados } from "./firebase/dbService";
+import { buscarAtividades, buscarDados } from "./firebase/dbService";
 import { buscarUsers } from "./firebase/dbService";
 import Header from "./components/Header";
 
@@ -18,6 +18,7 @@ function App() {
   const [items, setItems] = useState([]);
   const [moduleSelected, setModuleSelected] = useState("");
   const [data, setData] = useState([]);
+  const [userActivities, setUserActivities] = useState([]);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -49,12 +50,22 @@ function App() {
     };
 
     carregarTarefas();
+
+    const carregarAtividades = async () => {
+      await buscarAtividades().then((atividadesBuscadas) => {
+        setUserActivities(atividadesBuscadas);
+      });
+    };
+
+    carregarAtividades();
   }, []);
 
   return (
     <div className="App">
       <Load />
       <Header
+        userActivities={userActivities}
+        setUserActivities={setUserActivities}
         data={data}
         setItems={setItems}
         userActive={userActive}
