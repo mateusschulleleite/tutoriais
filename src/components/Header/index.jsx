@@ -7,6 +7,7 @@ import Theme from "../Theme/Theme";
 import { logout } from "../../firebase/auth";
 import { MdAddToPhotos } from "react-icons/md";
 import { enviarDados } from "../../firebase/dbService";
+import Notification from "../Notification/Notification";
 
 export default function Header({ setItems, data, userActive, userIsAdmin }) {
   const [module, setModule] = useState("banners");
@@ -149,6 +150,7 @@ export default function Header({ setItems, data, userActive, userIsAdmin }) {
         )}
       </div>
       <div className="header__options">
+        <Notification />
         <div className="header__options--image">
           <FaUserCircle />
         </div>
