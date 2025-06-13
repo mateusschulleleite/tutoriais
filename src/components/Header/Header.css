@@ -8,9 +8,11 @@
 
 .header__search {
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
-.header__search div {
+.header__search--icon {
   position: absolute;
   top: 53%;
   left: 20px;
@@ -38,6 +40,84 @@
   outline: none;
 }
 
+.header__search--add {
+  font-size: 27px;
+  cursor: pointer;
+  margin-left: 15px;
+  color: rgb(229, 44, 69);
+}
+
+.header__search--add > div {
+  transition: 100ms all;
+  height: 0px;
+  overflow: hidden;
+  cursor: default;
+  border-radius: 10px;
+  padding: 0px;
+  position: absolute;
+  background: var(--bg-color-secondary);
+  z-index: 2;
+  box-shadow: 0px 0px 9px -1px var(--bg-color-terciary);
+}
+
+.header__search--add > div.open {
+  height: auto;
+  overflow: auto;
+  padding: 20px;
+  transition: 100ms all;
+}
+
+.header__search--add > div fieldset {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  z-index: 2;
+  margin-bottom: 20px;
+}
+
+.header__search--add > div fieldset label {
+  font-size: 18px;
+  color: var(--text-color-secondary);
+  margin-bottom: 10px;
+}
+
+.header__search--add > div fieldset select {
+  padding: 10px;
+  border-radius: 15px;
+  font-size: 15px;
+}
+
+.header__search--add > div fieldset input {
+  width: 300px;
+  padding: 10px;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.header__search--add > div fieldset p {
+  font-size: 13px;
+  display: none;
+}
+
+.header__search--add > div > div {
+  display: flex;
+  gap: 10px;
+}
+
+.header__search--add > div > div button {
+  width: 100%;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  padding: 7px;
+  cursor: pointer;
+}
+
+.header__search--add-new {
+  background: rgb(229, 44, 69);
+  color: #fff;
+}
+
 .header__options {
   display: flex;
   align-items: center;
@@ -47,7 +127,7 @@
 .header__options--image {
   display: flex;
   font-size: 30px;
-  color:rgb(229, 44, 69);
+  color: rgb(229, 44, 69);
 }
 
 .header__options--name {

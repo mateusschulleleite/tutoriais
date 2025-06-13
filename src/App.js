@@ -6,7 +6,6 @@ import Tutors from "./components/Tutors";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase/auth";
 import { useNavigate } from "react-router";
-import NewTutor from "./components/NewTutor";
 import { buscarDados } from "./firebase/dbService";
 import { buscarUsers } from "./firebase/dbService";
 import Header from "./components/Header";
@@ -59,8 +58,8 @@ function App() {
         data={data}
         setItems={setItems}
         userActive={userActive}
+        userIsAdmin={userIsAdmin}
       />
-      {newTutor && <NewTutor setNewTutor={setNewTutor} data={data} />}
       <Tutors
         moduleSelected={moduleSelected}
         setModuleSelected={setModuleSelected}
