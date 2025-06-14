@@ -6,14 +6,16 @@ import iconeLupa from "./icone-lupa.png";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { excluirItemDoArray } from "../../firebase/dbService";
 import Theme from "../Theme/Theme";
+import DeleteTutorPopup from "../DeleteTutorPopup";
 
 export default function TutorView({
   moduleSelected,
   data,
   userIsAdmin,
   items,
-  setItems
+  setItems,
 }) {
+  const [deletePopup, setDeletePopup] = useState(false);
 
   useEffect(() => {
     const module = data.find((m) => m.id === moduleSelected);
@@ -39,14 +41,29 @@ export default function TutorView({
     }, 3000);
   }
 
-  
-
-  const handleTrash = (value) => {
-    excluirItemDoArray(moduleSelected, value);
+  const handleTrash = () => {
+    setDeletePopup(true);
+    document.querySelector("body").style.overflowY = "hidden";
+    document.querySelector("body").style.paddingRight = "6px";
   };
+
+  const [itemSelected, setItemSelected] = useState();
+
+  function deleteTutor() {
+    excluirItemDoArray(moduleSelected, itemSelected);
+    setDeletePopup(false);
+    document.querySelector("body").style.overflowY = "scroll";
+    document.querySelector("body").style.paddingRight = "0px";
+  }
 
   return (
     <div className="tutoriais-sublista">
+      {deletePopup === true && (
+        <DeleteTutorPopup
+          deleteTutor={deleteTutor}
+          setDeletePopup={setDeletePopup}
+        />
+      )}
       <div className="sublista-titulo">
         <h1>Lista de Tutoriais</h1>
       </div>
@@ -84,7 +101,13 @@ export default function TutorView({
                       <span>Copiar Link</span>
                     </div>
                     {userIsAdmin === "admin" && (
-                      <div className="trash" onClick={() => handleTrash(item)}>
+                      <div
+                        className="trash"
+                        onClick={() => {
+                          handleTrash();
+                          setItemSelected(item);
+                        }}
+                      >
                         <FaRegTrashAlt />
                       </div>
                     )}
