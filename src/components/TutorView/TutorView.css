@@ -22,7 +22,7 @@
 }
 
 .sublista {
-  overflow-y: scroll;
+  overflow-y: auto;
   height: calc(100% - 50.8px);
   background-image: url(./background.svg);
   background-size: contain;
