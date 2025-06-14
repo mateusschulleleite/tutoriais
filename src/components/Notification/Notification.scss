@@ -60,6 +60,15 @@
       font-weight: 500;
     }
 
+    span {
+      color: var(--text-color-secondary);
+      text-align: left;
+      display: block;
+      font-weight: 300;
+      font-size: 15px;
+      margin-top: 15px;
+    }
+
     ul {
       li {
         font-size: 15px;
@@ -73,6 +82,7 @@
           font-weight: 500;
           color: #e52c46;
           font-size: 16px;
+          margin-top: 0;
         }
       }
     }

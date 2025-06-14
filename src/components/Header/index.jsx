@@ -66,7 +66,8 @@ export default function Header({
       name,
       link,
       newDate,
-      userActive.name
+      userActive.name,
+      userActive.uid
     );
     setModule("banners");
     setName();

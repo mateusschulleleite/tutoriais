@@ -24,7 +24,12 @@ export const buscarAtividades = async () => {
   return querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
 };
 
-export const enviarDados = async (module, name, link, newDate, user) => {
+export const atualizarAtividades = async (id, novosDados) => {
+  const docRef = doc(db, "activities", id); 
+  await updateDoc(docRef, novosDados);
+};
+
+export const enviarDados = async (module, name, link, newDate, user, uid) => {
   const items = "items";
   try {
     await updateDoc(doc(db, "tutoriais", module), {
@@ -35,7 +40,7 @@ export const enviarDados = async (module, name, link, newDate, user) => {
       await addDoc(collection(db, "activities"), {
         name: name,
         date: newDate,
-        readBy: [],
+        readBy: [uid],
         user: user,
       });
     } catch (error) {
